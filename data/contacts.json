@@ -1,5 +1,16 @@
 {
-  "fullName": "Carmen Gonzales",
-  "nickname": "carmensita",
-  "birthday": "11/11/2000"
+  "contacts": [{
+    "fullName": "Carmen Gonzales",
+    "nickname": "carmensita",
+    "birthday": "11/11/2000"
+  },{
+    "fullName": "Leon Suarez",
+    "nickname": "Leonel",
+    "birthday": "23/05/1995"
+  },{
+    "fullName": "Abigail Lopez",
+    "nickname": "Aby",
+    "birthday": "05/01/1998"
+  }
+  ]
 }
