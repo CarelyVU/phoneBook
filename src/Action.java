@@ -1,17 +1,21 @@
 public class Action {
-  private ListOfContacts Contacts;
+  private ListOfContacts contacts;
   public Action() throws Exception {
     //Con esto ya pondriamos en setOfContacts todos los contactos
-    Contacts = new ListOfContacts();
+    contacts = new ListOfContacts();
   }
   public void showContacts(){
     StringBuilder show=new StringBuilder("");
-    for (Contact contact: Contacts.listOfContacts) {
+    for (Contact contact: contacts.listOfContacts) {
       show.append(String.format("%s\t%s\t%s\n%s\t%s\t%s\n",
           contact.getFullName(), contact.getNickname(), contact.getBirthday(),
-          contact.getInfoList().getEmail(), contact.getInfoList().getAdress(), contact.getInfoList().getCellphone()));
+          contact.getEmail(), contact.getAddress(), contact.getCellphone()));
     }
     System.out.println(show);
+  }
+
+  public void changeNickname(){
+    contacts.write("Carmen Gonzales","nickname","Carmen");
   }
   /*
 • Buscar por numero de cel

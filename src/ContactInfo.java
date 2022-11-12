@@ -15,9 +15,14 @@ public abstract class ContactInfo {
   public String getBirthday() {
     return birthday;
   }
-
-  public Info getInfoList() {
-    return infoList;
+  public String getCellphone() {
+    return infoList.cellphone;
+  }
+  public String getAddress() {
+    return infoList.adress;
+  }
+  public String getEmail() {
+    return infoList.email;
   }
 
   public void setFullName(String fullName) {

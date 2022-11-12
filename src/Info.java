@@ -1,23 +1,11 @@
 public class Info {
-  private String cellphone;
-  private String email;
-  private String adress;
+  public String cellphone;
+  public String email;
+  public String adress;
   public Info(String cellphone, String email, String address){
     this.cellphone=cellphone;
     this.email=email;
     this.adress=address;
-  }
-
-  public String getCellphone() {
-    return cellphone;
-  }
-
-  public String getEmail() {
-    return email;
-  }
-
-  public String getAdress() {
-    return adress;
   }
 }
 
