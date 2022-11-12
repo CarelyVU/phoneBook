@@ -2,15 +2,30 @@
   "contacts": [{
     "fullName": "Carmen Gonzales",
     "nickname": "carmensita",
-    "birthday": "11/11/2000"
+    "birthday": "11/11/2000",
+    "info": [{
+      "cellphone": "+578 1255465",
+      "email": "carmen.gonzales@gmail.com",
+      "address": "Av. Blanco Galindo N 785, Zona Este"
+    }]
   },{
     "fullName": "Leon Suarez",
     "nickname": "Leonel",
-    "birthday": "23/05/1995"
+    "birthday": "23/05/1995",
+    "info": [{
+      "cellphone": "+578 789255",
+      "email": "elLeon@outlook.com",
+      "address": "Av. Felipe Suarez N 89, Zona Sur"
+    }]
   },{
     "fullName": "Abigail Lopez",
     "nickname": "Aby",
-    "birthday": "05/01/1998"
+    "birthday": "05/01/1998",
+    "info": [{
+      "cellphone": "+655 7895256",
+      "email": "abyBee@jala.university",
+      "address": "Av. Navarro N 45, Zona Norte"
+    }]
   }
   ]
 }

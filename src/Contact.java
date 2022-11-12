@@ -1,27 +1,35 @@
+import java.util.Iterator;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+
 //necesita un nuevo nombre
-public abstract class Contact {
-  public static String fullName = "nombre de prueba";
-  private String nickname;
-  private String birthday;
-  private ContactInfo contactInfo;
-
-  /*public static void imprimirArray() throws IOException, ParseException {
-    //obj deja leer el archivo
-    Object obj = new JSONParser().parse(new FileReader( "data/contacts.json" ));
-    JSONObject jsonObject = (JSONObject) obj;
-    JSONArray slideContent = (JSONArray) jsonObject.get("contacts");
-    Iterator i = slideContent.iterator();
-
+/*Group personas[] = [Contactos de archivo]
+* */
+public class Contact extends ContactInfo {
+  //quien elije grupo? El usuario? puede ser cualquier cosa
+  private String group;
+  public Contact(String fullName, String nickname, String birthday, JSONArray jsonInfo){
+    setFullName(fullName);
+    setNickname(nickname);
+    setBirthday(birthday);
+    Iterator i = jsonInfo.iterator();
+    JSONObject info;
     while (i.hasNext()) {
-      JSONObject slide = (JSONObject) i.next();
-      fullName = (String) slide.get("fullName");
-      nickname = (String) slide.get("nickname");
-      birthday = (String) slide.get("birthday");
-      System.out.printf("%s\t%s\t%s\n", fullName, nickname, birthday);
+      info = (JSONObject) i.next();
+      setInfo((String) info.get("cellphone"), (String) info.get("email"), (String) info.get("address"));
     }
-  }*/
-  public abstract String groupByEmailDomain();
-  public abstract String groupByCodeArea();
-  public abstract String changeGroup(String contactKey, String newGroup);
-  public abstract void removeContactOfGroup(String contactKey);
+    this.group = "Ungrouped";
+  }
+  public void groupByEmailDomain(){
+    //regresa un String
+  }
+  public void groupByCodeArea(){
+    //regresa un String
+  }
+  public void changeGroup(String contactKey, String newGroup){
+
+  }
+  public void removeContactOfGroup(String contactKey){
+
+  }
 }
