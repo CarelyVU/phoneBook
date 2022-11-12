@@ -1,13 +1,12 @@
+import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
-//necesita un nuevo nombre
-/*Group personas[] = [Contactos de archivo]
-* */
 public class Contact extends ContactInfo {
   //quien elije grupo? El usuario? puede ser cualquier cosa
-  private String group;
+  private Map<TipeOfGroup,String> group = new HashMap<>();
   public Contact(String fullName, String nickname, String birthday, JSONArray jsonInfo){
     setFullName(fullName);
     setNickname(nickname);
@@ -18,18 +17,30 @@ public class Contact extends ContactInfo {
       info = (JSONObject) i.next();
       setInfo((String) info.get("cellphone"), (String) info.get("email"), (String) info.get("address"));
     }
-    this.group = "Ungrouped";
+    group.put(TipeOfGroup.personalized,"Undefined");
+    groupByCodeArea();
+    groupByEmailDomain();
   }
+
   public void groupByEmailDomain(){
-    //regresa un String
+    String[] parts = getEmail().split("@");
+    group.put(TipeOfGroup.emailDomain,parts[1]);
   }
+
   public void groupByCodeArea(){
-    //regresa un String
+    String[] parts = getCellphone().split(" ");
+    group.put(TipeOfGroup.areaCode,parts[0]);
   }
-  public void changeGroup(String contactKey, String newGroup){
 
+  public void changeGroup(String newGroup){
+    group.put(TipeOfGroup.personalized, newGroup);
   }
-  public void removeContactOfGroup(String contactKey){
 
+  public void removeGroup(){
+    group.put(TipeOfGroup.personalized, "Undefined");
+  }
+
+  public String getGroup(TipeOfGroup tipeOfGroup){
+    return group.get(tipeOfGroup);
   }
 }

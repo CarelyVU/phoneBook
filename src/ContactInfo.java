@@ -4,6 +4,7 @@ public abstract class ContactInfo {
   private String nickname;
   private String birthday;
   private Info infoList;
+  String group;
   public String getFullName() {
     return fullName;
   }
@@ -43,6 +44,7 @@ public abstract class ContactInfo {
   //cambiar nickname
   public abstract void groupByEmailDomain();
   public abstract void groupByCodeArea();
-  public abstract void changeGroup(String contactKey, String newGroup);
-  public abstract void removeContactOfGroup(String contactKey);
+  public abstract void changeGroup(String newGroup);
+  public abstract void removeGroup();
+
 }
